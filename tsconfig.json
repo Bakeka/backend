@@ -7,16 +7,17 @@
     "rootDir": ".",
     "outDir": "build",
     "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
     "alwaysStrict": true,
-    "sourceMap": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
     "noImplicitReturns": true,
+    "noImplicitThis": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
+    "sourceMap": true,
     "strictNullChecks": false
   }
 }
