@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 
-const blogSchema = new Schema({
+const bakekaSchema = new Schema({
     name: String,
     id: Integer,
     position: [{ posx: Double, posy: Double}],
@@ -15,9 +15,9 @@ const blogSchema = new Schema({
     
 });
 
-bookSchema.path('_id'); // ObjectId { ... }
+bakekaSchema.path('_id'); // ObjectId { ... }
 
-const BookModel = mongoose.model('Book', bookSchema);
+const bakekaModel = mongoose.model('Bakeka', bakekaSchema);
 
 
 
