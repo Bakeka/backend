@@ -1,16 +1,16 @@
 import bodyParser from "body-parser"
 import express, { Request, Response } from "express"
-import { argv, exit } from "process"
+import * as process from "process"
 import { RegisterRoutes } from "./api/routes"
 import * as config from "./config"
 
 import swaggerUi from "swagger-ui-express"
 import swaggerDoc from "./api/swagger.json"
 
-const args = argv.slice(2)
+const args = process.argv.slice(2)
 if (args.length < 1) {
-  console.log(`Usage: ${argv[1]} <config_file>`)
-  exit(1)
+  console.log(`Usage: ${process.argv[1]} <config_file>`)
+  process.exit(1)
 }
 
 // Load config
@@ -40,4 +40,6 @@ app.use(
 RegisterRoutes(app)
 
 // Entrypoint
-app.listen(cfg.port)
+app.listen(cfg.port, () => {
+  console.debug(`Started listening on ${cfg.port}`)
+})

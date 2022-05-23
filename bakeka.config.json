@@ -1,7 +1,8 @@
 {
+  "port": 8080,
   "db": {
     "host": "",
-    "port": 8080,
+    "port": 9090,
     "username": "",
     "password": ""
   }
