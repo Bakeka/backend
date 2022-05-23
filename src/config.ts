@@ -4,12 +4,12 @@ import { cwd, env } from "process"
 
 export function load(path: string) {
   const data = readFileSync(resolve(cwd(), path))
-  var config = JSON.parse(data.toString())
+  const config = JSON.parse(data.toString())
 
   // Override the config object with env variables
   Object.entries(env)
     .filter(
-      ([key, _]) => key.startsWith("BKK_")
+      ([key]) => key.startsWith("BKK_")
     )
     .map(
       ([key, value]) => [key.replace("BKK_", ""), value]

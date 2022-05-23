@@ -1,10 +1,11 @@
-import { IsDateString, IsEmpty, IsEnum, IsInt, IsLatitude, IsLongitude, Max, Min } from "class-validator";
+import { IsDateString, IsEnum, IsInt, IsLatitude, IsLongitude, IsMongoId, IsOptional, Max, Min } from "class-validator";
 import { ObjectId } from "mongodb";
 import { Accessibility, Material, Size, Type } from "./Enums";
 
 export class Board {
-  @IsEmpty()
-  _id?: ObjectId
+  @IsOptional()
+  @IsMongoId()
+  id?: ObjectId
 
   @IsEnum(Accessibility)
   accessibility: Accessibility
