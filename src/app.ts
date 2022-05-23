@@ -4,7 +4,7 @@ import * as process from "process"
 import { RegisterRoutes } from "./api/routes"
 import * as config from "./config"
 
-import swaggerUi from "swagger-ui-express"
+import redoc from "redoc-express"
 import swaggerDoc from "./api/swagger.json"
 
 const args = process.argv.slice(2)
@@ -30,12 +30,13 @@ app.get('/docs/swagger.json', (_: Request, res: Response) => {
   res.send(swaggerDoc)
 });
 
-app.use(
-  "/docs",
-  express.static('node_modules/swagger-ui-dist/', { index: false }),
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDoc, { swaggerUrl: "/docs/swagger.json" })
-)
+app.get(
+  '/docs',
+  redoc({
+    title: 'Bakeka API Docs',
+    specUrl: '/docs/swagger.json',
+  })
+);
 
 RegisterRoutes(app)
 
