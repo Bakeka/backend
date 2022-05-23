@@ -1,27 +1,27 @@
 export enum Accessibility {
-  PUBLIC,
-  PRIVATE,
-  INACCESSIBLE
+  Public = "PUBLIC",
+  Private = "PRIVATE",
+  Inaccessible = "INACCESSIBLE"
 }
 
 export enum Material {
-  WOOD,
-  METAL,
-  PLASTIC,
-  GLASS,
-  OTHER
+  Wood = "WOOD",
+  Metal = "METAL",
+  Plastic = "PLASTIC",
+  Glass = "GLASS",
+  Other = "OTHER"
 }
 
 export enum Size {
-  SMALL,
-  MEDIUM,
-  LARGE
+  Small = "SMALL",
+  Medium = "MEDIUM",
+  Large = "LARGE"
 }
 
 export enum Type {
-  OBITUARY,
-  POLITICS,
-  NOTICE,
-  PUBLIC,
-  OTHER
+  Obituary = "OBITUARY",
+  Politics = "POLITICS",
+  Notice = "NOTICE",
+  Public = "PUBLIC",
+  Other = "OTHER"
 }

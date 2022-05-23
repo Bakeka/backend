@@ -1,3 +1,3 @@
 import { Type } from "./Enums";
 
-export type Numbers = Map<Type, number>
+export type Numbers = { [T in Type]: number }
