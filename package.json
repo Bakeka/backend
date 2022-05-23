@@ -16,14 +16,20 @@
     "node": ">= 18 <19"
   },
   "scripts": {
-    "start": "node build/src/app.js",
-    "build": "esbuild app.ts --bundle --minify --sourcemap --platform=node --target=node18 --outfile=build/app.js",
-    "build:watch": "esbuild app.ts --bundle --watch --platform=node --target=node18 --outfile=build/app.js"
+    "docker": "yarn build && docker-compose up --build",
+    "start": "node build/app.js bakeka.config.json",
+    "build": "esbuild src/app.ts --bundle --minify --sourcemap --platform=node --target=node18 --outfile=build/app.js && tsc --emitDeclarationOnly --declaration --project tsconfig.json",
+    "build:watch": "esbuild src/app.ts --bundle --watch --platform=node --target=node18 --outfile=build/app.js"
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "class-transformer": "^0.5.1",
+    "class-transformer-validator": "^0.9.1",
+    "class-validator": "^0.13.2",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/node": "^17.0.33",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
