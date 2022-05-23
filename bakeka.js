@@ -1,5 +1,6 @@
 import {Bakeka, Purpose, Material, Affluence, Accessibility} from './schema.js';
-//var Bakeka = require('./schema'); 
+
+//removing all the things inside the model
 Bakeka.remove({}, function(err) {     
              if (err) {                  console.log(err)              }  
             else {console.log('cancellazione eseguita')}          }      ); 
@@ -19,17 +20,6 @@ else {console.log('cancellazione eseguita')}          }      );
 Affluence.remove({}, function(err) {     
 if (err) {                  console.log(err)              }  
 else {console.log('cancellazione eseguita')}          }      ); 
-
-/*var note1 = new Bakeka({  
-    id:1,
-    name: 'Gita a Venaria',  
-    affluence: 'Ci siamo tanto divertiti bla bla bla....', 
-    materials: "skdgbf",
-    purposes:"skjfb",
-    accessibility: "aaaaaaaaa",
-    url: 'Venaria',
-    position: {latitude: 45.137058, longitude: 7.621327},
-             }); */
 
 var material1 = new Material({
     typeMaterial: "Legno"

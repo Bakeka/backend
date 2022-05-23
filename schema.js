@@ -39,7 +39,7 @@ var bakekaSchema = new Schema({
     //purposes: String,
     purpose: [{ type:String, ref: 'Purpose'}],
     //accessibilty: String,
-    accessibilty: [{ type:String, ref: 'Accessibility'}],
+    accessibility: [{ type:String, ref: 'Accessibility'}],
     url: String,
     position: {      latitude: Number,      longitude: Number    } 
 
