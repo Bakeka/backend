@@ -1,0 +1,307 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"ObjectId": {
+				"type": "string",
+				"description": "A class representation of the BSON ObjectId type."
+			},
+			"Accessibility": {
+				"enum": [
+					"PUBLIC",
+					"PRIVATE",
+					"INACCESSIBLE"
+				],
+				"type": "string"
+			},
+			"Material": {
+				"enum": [
+					"WOOD",
+					"METAL",
+					"PLASTIC",
+					"GLASS",
+					"OTHER"
+				],
+				"type": "string"
+			},
+			"Size": {
+				"enum": [
+					"SMALL",
+					"MEDIUM",
+					"LARGE"
+				],
+				"type": "string"
+			},
+			"Type": {
+				"enum": [
+					"OBITUARY",
+					"POLITICS",
+					"NOTICE",
+					"PUBLIC",
+					"OTHER"
+				],
+				"type": "string"
+			},
+			"Board": {
+				"properties": {
+					"id": {
+						"$ref": "#/components/schemas/ObjectId"
+					},
+					"latitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"longitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"accessibility": {
+						"$ref": "#/components/schemas/Accessibility"
+					},
+					"material": {
+						"$ref": "#/components/schemas/Material"
+					},
+					"size": {
+						"$ref": "#/components/schemas/Size"
+					},
+					"traffic": {
+						"type": "number",
+						"format": "double"
+					},
+					"type": {
+						"$ref": "#/components/schemas/Type"
+					},
+					"created": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"modified": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"latitude",
+					"longitude",
+					"accessibility",
+					"material",
+					"size",
+					"traffic",
+					"type",
+					"created",
+					"modified"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Filter": {
+				"properties": {
+					"accessibility": {
+						"items": {
+							"$ref": "#/components/schemas/Accessibility"
+						},
+						"type": "array"
+					},
+					"material": {
+						"items": {
+							"$ref": "#/components/schemas/Material"
+						},
+						"type": "array"
+					},
+					"size": {
+						"items": {
+							"$ref": "#/components/schemas/Size"
+						},
+						"type": "array"
+					},
+					"traffic": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"type": {
+						"items": {
+							"$ref": "#/components/schemas/Type"
+						},
+						"type": "array"
+					},
+					"latitude": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"longitude": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Numbers": {
+				"properties": {
+					"OBITUARY": {
+						"type": "number",
+						"format": "double"
+					},
+					"POLITICS": {
+						"type": "number",
+						"format": "double"
+					},
+					"NOTICE": {
+						"type": "number",
+						"format": "double"
+					},
+					"PUBLIC": {
+						"type": "number",
+						"format": "double"
+					},
+					"OTHER": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object"
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "bakeka-backend",
+		"version": "0.0.1",
+		"description": "The backend monolith for Bakeka",
+		"license": {
+			"name": "AGPL-3.0-or-later"
+		},
+		"contact": {
+			"name": "Bakeka"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/boards": {
+			"post": {
+				"operationId": "FilterBoards",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/Board"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Filter"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/boards/{boardId}": {
+			"get": {
+				"operationId": "GetBoard",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Board"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "boardId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "UpdateBoard",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "boardId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Board"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/boards/numbers": {
+			"get": {
+				"operationId": "GetNumbers",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Numbers"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/api/v1"
+		}
+	]
+}
