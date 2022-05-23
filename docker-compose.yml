@@ -1,0 +1,10 @@
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:4.4
+
+  bakeka:
+    container_name: bakeka_backend
+    build: .
+    environment:
+      BKK_DB_HOST: mongodb
