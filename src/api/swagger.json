@@ -11,6 +11,7 @@
 				"description": "A class representation of the BSON ObjectId type."
 			},
 			"Accessibility": {
+				"description": "Enum Accessibility represents a board's physical environment and reachability.",
 				"enum": [
 					"PUBLIC",
 					"PRIVATE",
@@ -19,6 +20,7 @@
 				"type": "string"
 			},
 			"Material": {
+				"description": "Enum Material describes a board's surface material.",
 				"enum": [
 					"WOOD",
 					"METAL",
@@ -29,6 +31,7 @@
 				"type": "string"
 			},
 			"Size": {
+				"description": "Enum Size describes a boards's general physical size.",
 				"enum": [
 					"SMALL",
 					"MEDIUM",
@@ -37,6 +40,7 @@
 				"type": "string"
 			},
 			"Type": {
+				"description": "Enum Type represents a board's purpose.",
 				"enum": [
 					"OBITUARY",
 					"POLITICS",
@@ -47,44 +51,61 @@
 				"type": "string"
 			},
 			"Board": {
+				"description": "Type Board represents a bulletin board.",
 				"properties": {
-					"id": {
+					"_id": {
 						"$ref": "#/components/schemas/ObjectId"
 					},
 					"latitude": {
 						"type": "number",
-						"format": "double"
+						"format": "float",
+						"description": "Latitude coordinate of the board. Has to be between `-90.0` and `90.0`.",
+						"minimum": -90,
+						"maximum": 90
 					},
 					"longitude": {
 						"type": "number",
-						"format": "double"
+						"format": "float",
+						"description": "Longitude coordinate of the board. Has to be between `-180.0` and `180.0`.",
+						"minimum": -180,
+						"maximum": 180
 					},
 					"accessibility": {
-						"$ref": "#/components/schemas/Accessibility"
+						"$ref": "#/components/schemas/Accessibility",
+						"description": "Board accessibility."
 					},
 					"material": {
-						"$ref": "#/components/schemas/Material"
+						"$ref": "#/components/schemas/Material",
+						"description": "Board material."
 					},
 					"size": {
-						"$ref": "#/components/schemas/Size"
+						"$ref": "#/components/schemas/Size",
+						"description": "Board size."
 					},
 					"traffic": {
-						"type": "number",
-						"format": "double"
+						"type": "integer",
+						"format": "int32",
+						"description": "Board traffic amount.",
+						"minimum": 1,
+						"maximum": 5
 					},
 					"type": {
-						"$ref": "#/components/schemas/Type"
+						"$ref": "#/components/schemas/Type",
+						"description": "Board type."
 					},
 					"created": {
 						"type": "string",
-						"format": "date-time"
+						"format": "date-time",
+						"description": "Board creation date."
 					},
 					"modified": {
 						"type": "string",
-						"format": "date-time"
+						"format": "date-time",
+						"description": "Board last modification date."
 					}
 				},
 				"required": [
+					"_id",
 					"latitude",
 					"longitude",
 					"accessibility",
@@ -99,51 +120,102 @@
 				"additionalProperties": false
 			},
 			"Filter": {
+				"description": "Type Filter represents a transient object used to query the API for boards.",
 				"properties": {
 					"accessibility": {
 						"items": {
 							"$ref": "#/components/schemas/Accessibility"
 						},
-						"type": "array"
+						"type": "array",
+						"description": "Filter the results' accessibility, if defined.",
+						"example": [
+							"PUBLIC",
+							"PRIVATE"
+						],
+						"maxItems": 3
 					},
 					"material": {
 						"items": {
 							"$ref": "#/components/schemas/Material"
 						},
-						"type": "array"
+						"type": "array",
+						"description": "Filter the results' material, if defined.",
+						"example": [
+							"GLASS",
+							"WOOD",
+							"OTHER"
+						],
+						"maxItems": 5
 					},
 					"size": {
 						"items": {
 							"$ref": "#/components/schemas/Size"
 						},
-						"type": "array"
+						"type": "array",
+						"description": "Filter the results' size, if defined.",
+						"example": [
+							"SMALL",
+							"LARGE"
+						],
+						"maxItems": 3
 					},
 					"traffic": {
 						"items": {
-							"type": "number",
-							"format": "double"
+							"type": "integer",
+							"format": "int32"
 						},
-						"type": "array"
+						"type": "array",
+						"description": "Filter the results' traffic amount, if defined.",
+						"example": [
+							2,
+							5
+						],
+						"minimum": 1,
+						"maximum": 5
 					},
 					"type": {
 						"items": {
 							"$ref": "#/components/schemas/Type"
 						},
-						"type": "array"
+						"type": "array",
+						"description": "Filter the results' type, if defined.",
+						"example": [
+							"OBITUARY",
+							"PUBLIC"
+						],
+						"maxItems": 5
 					},
 					"latitude": {
 						"items": {
 							"type": "number",
 							"format": "double"
 						},
-						"type": "array"
+						"type": "array",
+						"description": "Minimum and maximum latitudes for the results.",
+						"example": [
+							-45.7,
+							23.2
+						],
+						"minItems": 2,
+						"maxItems": 2,
+						"minimum": -90,
+						"maximum": 90
 					},
 					"longitude": {
 						"items": {
 							"type": "number",
 							"format": "double"
 						},
-						"type": "array"
+						"type": "array",
+						"description": "Minimum and maximum latitudes for the results.",
+						"example": [
+							-103.4,
+							95.8
+						],
+						"minItems": 2,
+						"maxItems": 2,
+						"minimum": -180,
+						"maximum": 180
 					}
 				},
 				"type": "object",
@@ -172,7 +244,8 @@
 						"format": "double"
 					}
 				},
-				"type": "object"
+				"type": "object",
+				"description": "Type Numbers contains the total number of board registered for each\n{@link Type}."
 			}
 		},
 		"securitySchemes": {}
@@ -208,14 +281,17 @@
 						}
 					}
 				},
+				"description": "Retrieves multiple board by using various filters. If any of the properties\nof the filter is `undefined`, it will not be applied to the results.",
 				"security": [],
 				"parameters": [],
 				"requestBody": {
+					"description": "- The filter to apply",
 					"required": true,
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "#/components/schemas/Filter"
+								"$ref": "#/components/schemas/Filter",
+								"description": "- The filter to apply"
 							}
 						}
 					}
@@ -237,9 +313,11 @@
 						}
 					}
 				},
+				"description": "Retrieves a single board by its internal ID.",
 				"security": [],
 				"parameters": [
 					{
+						"description": "- The board's identifier",
 						"in": "path",
 						"name": "boardId",
 						"required": true,
@@ -256,9 +334,11 @@
 						"description": "No content"
 					}
 				},
+				"description": "Updated a single board by its internal ID.",
 				"security": [],
 				"parameters": [
 					{
+						"description": "- The board's identifier",
 						"in": "path",
 						"name": "boardId",
 						"required": true,
@@ -268,11 +348,13 @@
 					}
 				],
 				"requestBody": {
+					"description": "- The new board object",
 					"required": true,
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "#/components/schemas/Board"
+								"$ref": "#/components/schemas/Board",
+								"description": "- The new board object"
 							}
 						}
 					}

@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
     /* Basic Options */
+    "rootDir": "src",
+    "declaration": true,
     "incremental": true,
     "target": "es6",
-    "module": "es2020",
+    "module": "commonjs",
     "outDir": "build",
+    "tsBuildInfoFile": "build/.tsbuildinfo",
     /* Strict Type-Checking Options */
     "strict": true,
     "noImplicitAny": true,

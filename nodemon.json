@@ -1,5 +1,5 @@
 {
-  "exec": "esbuild src/app.ts --bundle --watch --platform=node --target=node18 --outfile=build/app.js",
+  "exec": "ts-node src/app.ts",
   "watch": ["src"],
   "ignore": ["routes.ts"],
   "ext": "ts"

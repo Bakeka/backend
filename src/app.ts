@@ -1,20 +1,22 @@
 import bodyParser from "body-parser"
 import express, { Request, Response } from "express"
-import * as process from "process"
+import process from "process"
+
 import { RegisterRoutes } from "./api/routes"
 import * as config from "./config"
 
-import redoc from "redoc-express"
 import swaggerDoc from "./api/swagger.json"
+import swaggerUi from "swagger-ui-express"
 
+// Parse CLI arguments
 const args = process.argv.slice(2)
-if (args.length < 1) {
-  console.log(`Usage: ${process.argv[1]} <config_file>`)
+if (args.length > 1) {
+  console.log(`Usage: ${process.argv[1]} [config_file]`)
   process.exit(1)
 }
 
 // Load config
-const cfg = config.load(args[0])
+const cfg = config.load(args.at(0))
 
 // Only use JSON
 const app = express()
@@ -25,22 +27,25 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// Swagger Docs
+// API Docs
 app.get('/docs/swagger.json', (_: Request, res: Response) => {
   res.send(swaggerDoc)
-});
+})
 
-app.get(
-  '/docs',
-  redoc({
-    title: 'Bakeka API Docs',
-    specUrl: '/docs/swagger.json',
-  })
-);
+app.use("/docs", swaggerUi.serve, async (_req: Request, res: Response) => {
+  return res.send(
+    swaggerUi.generateHTML(swaggerDoc)
+  )
+})
 
 RegisterRoutes(app)
 
 // Entrypoint
-app.listen(cfg.port, () => {
+const server = app.listen(cfg.port, () => {
   console.debug(`Started listening on ${cfg.port}`)
+})
+
+// Graceful shutdown
+process.on("SIGTERM", () => {
+  server.close()
 })
