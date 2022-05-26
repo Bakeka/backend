@@ -1,5 +1,6 @@
 import express, { NextFunction, Request, Response } from "express"
 import process from "process"
+import "@abraham/reflection"
 import { container } from "tsyringe"
 
 import * as routes from "./api/routes"
@@ -47,10 +48,16 @@ app.use("/docs", swaggerUi.serve, async (_req: Request, res: Response) => {
 // Add the generated routes
 routes.RegisterRoutes(app)
 
-// Middleware
+// Middleware, error handling
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error("ERROR:", err)
   res.sendStatus(500)
+})
+
+// Middleware, timeout
+app.use((_req: Request, res: Response, next: NextFunction) => {
+  res.setTimeout(3000, () => next(new Error("Request timed out")))
+  next()
 })
 
 // Entrypoint
