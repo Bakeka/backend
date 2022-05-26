@@ -1,4 +1,4 @@
-import { Type } from "./Enums";
+import { Type } from "./enums";
 
 /**
  * Type Numbers contains the total number of board registered for each

@@ -34,6 +34,7 @@ $ docker compose up --build
 📂 src                  # Source code
   📂 api                # Endpoints and controller(s)
   📂 entities           # Entities and Enum types
+  📂 services           # Data retrieval services
 ⚙️ bakeka.config.json   # Backend service configuration file
 📄 Dockerfile           # Docker runtime container for the backend
 📄 docker-compose.yml   # Service stack for the backend
