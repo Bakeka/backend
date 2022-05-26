@@ -5,11 +5,12 @@ import { BoardsService } from "../services/boards"
 import { Board } from "../entities/board"
 import { Filter } from "../entities/filter"
 import { Numbers } from "../entities/numbers"
+import { DatabaseService } from "../services/database"
 
 @injectable()
 @Route("boards")
 export class BoardsController extends Controller {
-  constructor(private boardsService: BoardsService) {
+  constructor(private boardsService: BoardsService, private db: DatabaseService) {
     super()
   }
 
@@ -17,38 +18,34 @@ export class BoardsController extends Controller {
    * Retrieves multiple board by using various filters. If any of the properties
    * of the filter is `undefined`, it will not be applied to the results.
    *
-   * @param filter - The filter to apply
+   * @param filter The filter to apply
    */
   @Post()
   public async filterBoards(@Body() filter: Filter): Promise<Board[]> {
-    this.boardsService.printConfig()
-    console.log(filter)
-    return []
+    console.log(this.db.connection.id)
+    return this.boardsService.filter(filter)
   }
 
   /**
    * Retrieves a single board by its internal ID.
    *
-   * @param boardId - The board's identifier
+   * @param boardId The board's identifier
    */
   @Get("{boardId}")
   public async getBoard(@Path() boardId: string): Promise<Board> {
-    console.log(boardId)
-    throw "not implemented"
+    return this.boardsService.get(boardId)
   }
 
 
   /**
    * Updated a single board by its internal ID.
    *
-   * @param boardId - The board's identifier
-   * @param board - The new board object
+   * @param boardId The board's identifier
+   * @param board The new board object
    */
   @Post("{boardId}")
   public async updateBoard(@Path() boardId: string, @Body() board: Board): Promise<void> {
-    console.log(boardId)
-    console.log(board)
-    throw "not implemented"
+    return this.boardsService.update(boardId, board)
   }
 
   /**
@@ -56,6 +53,6 @@ export class BoardsController extends Controller {
    */
   @Get("numbers")
   public async getNumbers(): Promise<Numbers> {
-    throw "not implemented"
+    return this.boardsService.numbers()
   }
 }

@@ -1,15 +1,35 @@
-import { Config } from "../config";
-import { inject, singleton } from "tsyringe";
+import { injectable, singleton } from "tsyringe"
 
+import { Board } from "../entities/board"
+import { Filter } from "../entities/filter"
+import { Numbers } from "../entities/numbers"
+// import { MongooseService } from "./mongoose"
+
+@injectable()
 @singleton()
 export class BoardsService {
-  constructor(@inject("config") private config: Config) {}
+  // constructor(private mongooseService: MongooseService) {}
 
-  printConfig(): void {
-    console.log(this.config)
+  public async filter(filter: Filter): Promise<Board[]> {
+    // console.log(this.mongooseService.connection.id)
+    console.log(filter)
+    throw "not implemented"
   }
 
-  print(): void {
-    console.log("Hello from BoardsService")
+  public async get(boardId: string): Promise<Board> {
+    console.log(boardId)
+    throw "not implemented"
+  }
+
+  public async update(boardId: string, board: Board): Promise<void> {
+    console.log({
+      "id": boardId,
+      "board": board
+    })
+    throw "not implemented"
+  }
+
+  public async numbers(): Promise<Numbers> {
+    throw "not implemented"
   }
 }
