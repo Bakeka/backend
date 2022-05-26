@@ -1,4 +1,4 @@
-import { ObjectId } from "mongodb";
+import { Types } from "mongoose";
 import { Accessibility, Material, Size, Type } from "./enums";
 
 /**
@@ -10,7 +10,7 @@ export interface Board {
    *
    * @example "507c7f79bcf86cd7994f6c0e"
    */
-  _id?: ObjectId
+  _id?: Types.ObjectId
 
   /**
    * Latitude coordinate of the board. Has to be between `-90.0` and `90.0`.

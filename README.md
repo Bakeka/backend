@@ -17,10 +17,12 @@ Install all dependencies:
 $ yarn
 ```
 
-Run the project in development mode (hot reload on file change):
-```shell
-$ yarn dev
-```
+Run the project in development mode:
+
+| Command          | Description                                                              |
+| ---------------- | ------------------------------------------------------------------------ |
+| `yarn dev`       | Starts the backend (and only the backend) with hot reload on code change |
+| `yarn dev:stack` | Start the backend *and* MongoDB (with Docker) with hot reload as above   |
 
 ### Deployment
 While local deployment through `yarn build && yarn start` is possible, [Docker Compose](https://github.com/docker/compose) is recommended for optimal management of the required services. 
@@ -30,13 +32,13 @@ $ docker compose up --build
 ```
 
 ### File structure
-```
-📂 src                  # Source code
-  📂 api                # Endpoints and controller(s)
-  📂 entities           # Entities and Enum types
-  📂 services           # Data retrieval services
-⚙️ bakeka.config.json   # Backend service configuration file
-📄 Dockerfile           # Docker runtime container for the backend
-📄 docker-compose.yml   # Service stack for the backend
-📄 package.json         # Dependencies, metadata and scripts
+```shell
+📂 src                      # Source code
+  📂 api                    # Endpoints and controller(s)
+  📂 entities               # Entities and Enum types
+  📂 services               # Data retrieval services
+⚙️ bakeka.config.json       # Backend service configuration file
+📄 Dockerfile               # Docker runtime container for the backend
+📄 docker-compose.yml       # Service stack for the backend
+📄 package.json             # Dependencies, metadata and scripts
 ```

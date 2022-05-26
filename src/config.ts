@@ -22,7 +22,7 @@ export interface Config {
  */
 export interface DB {
   host: string
-  port: string | number
+  port?: string | number
   username: string
   password?: string
 }

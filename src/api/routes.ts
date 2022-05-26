@@ -12,7 +12,7 @@ import * as express from 'express';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
-    "ObjectId": {
+    "Types.ObjectId": {
         "dataType": "refAlias",
         "type": {"dataType":"string","validators":{}},
     },
@@ -40,7 +40,7 @@ const models: TsoaRoute.Models = {
     "Board": {
         "dataType": "refObject",
         "properties": {
-            "_id": {"ref":"ObjectId"},
+            "_id": {"ref":"Types.ObjectId"},
             "latitude": {"dataType":"float","required":true,"validators":{"minimum":{"value":-90},"maximum":{"value":90}}},
             "longitude": {"dataType":"float","required":true,"validators":{"minimum":{"value":-180},"maximum":{"value":180}}},
             "accessibility": {"ref":"Accessibility","required":true},

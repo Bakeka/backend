@@ -6,9 +6,8 @@
 		"requestBodies": {},
 		"responses": {},
 		"schemas": {
-			"ObjectId": {
-				"type": "string",
-				"description": "A class representation of the BSON ObjectId type."
+			"Types.ObjectId": {
+				"type": "string"
 			},
 			"Accessibility": {
 				"description": "Enum Accessibility represents a board's physical environment and reachability.",
@@ -54,7 +53,7 @@
 				"description": "Type Board represents a bulletin board.",
 				"properties": {
 					"_id": {
-						"$ref": "#/components/schemas/ObjectId",
+						"$ref": "#/components/schemas/Types.ObjectId",
 						"description": "Internal identifier for the board.",
 						"example": "507c7f79bcf86cd7994f6c0e"
 					},
@@ -288,13 +287,13 @@
 				"security": [],
 				"parameters": [],
 				"requestBody": {
-					"description": "- The filter to apply",
+					"description": "The filter to apply",
 					"required": true,
 					"content": {
 						"application/json": {
 							"schema": {
 								"$ref": "#/components/schemas/Filter",
-								"description": "- The filter to apply"
+								"description": "The filter to apply"
 							}
 						}
 					}
@@ -320,7 +319,7 @@
 				"security": [],
 				"parameters": [
 					{
-						"description": "- The board's identifier",
+						"description": "The board's identifier",
 						"in": "path",
 						"name": "boardId",
 						"required": true,
@@ -341,7 +340,7 @@
 				"security": [],
 				"parameters": [
 					{
-						"description": "- The board's identifier",
+						"description": "The board's identifier",
 						"in": "path",
 						"name": "boardId",
 						"required": true,
@@ -351,13 +350,13 @@
 					}
 				],
 				"requestBody": {
-					"description": "- The new board object",
+					"description": "The new board object",
 					"required": true,
 					"content": {
 						"application/json": {
 							"schema": {
 								"$ref": "#/components/schemas/Board",
-								"description": "- The new board object"
+								"description": "The new board object"
 							}
 						}
 					}
