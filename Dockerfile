@@ -8,5 +8,6 @@ WORKDIR /bakeka
 COPY --from=builder /bakeka/build ./build
 COPY . .
 RUN yarn install --frozen-lockfile --no-cache --production
+ENV NODE_ENV=production
 EXPOSE 8080
 ENTRYPOINT [ "node", "build/app.js", "bakeka.config.json" ]
