@@ -1,7 +1,7 @@
 {
     "entryFile": "src/app.ts",
     "noImplicitAdditionalProperties": "throw-on-extras",
-    "controllerPathGlobs": ["src/api/*Controller.ts"],
+    "controllerPathGlobs": ["src/api/*controller.ts"],
     "spec": {
       "basePath": "/api/v1",
       "outputDirectory": "src/api",
@@ -9,6 +9,7 @@
     },
     "routes": {
       "basePath": "/api/v1",
-      "routesDir": "src/api"
+      "routesDir": "src/api",
+      "iocModule": "src/container"
     }
   }

@@ -1,11 +1,16 @@
 import { ObjectId } from "mongodb";
-import { Accessibility, Material, Size, Type } from "./Enums";
+import { Accessibility, Material, Size, Type } from "./enums";
 
 /**
  * Type Board represents a bulletin board.
  */
 export interface Board {
-  _id: ObjectId
+  /**
+   * Internal identifier for the board.
+   *
+   * @example "507c7f79bcf86cd7994f6c0e"
+   */
+  _id?: ObjectId
 
   /**
    * Latitude coordinate of the board. Has to be between `-90.0` and `90.0`.
@@ -13,6 +18,7 @@ export interface Board {
    * @isFloat
    * @minimum -90.0
    * @maximum +90.0
+   * @example -45.7
    */
   latitude: number
 
@@ -22,6 +28,7 @@ export interface Board {
    * @isFloat
    * @minimum -180.0
    * @maximum +180.0
+   * @example -103.4
    */
   longitude: number
 

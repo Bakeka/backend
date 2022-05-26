@@ -31,6 +31,9 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     /* Advanced Options */
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "reflect-metadata"
+    ]
   }
 }

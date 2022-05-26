@@ -3,7 +3,9 @@
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { Controller, ValidationService, FieldErrors, ValidateError, TsoaRoute, HttpStatusCodeLiteral, TsoaResponse, fetchMiddlewares } from '@tsoa/runtime';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-import { BoardsController } from './BoardsController';
+import { BoardsController } from './boards-controller';
+import { iocContainer } from './../container';
+import { IocContainer, IocContainerFactory } from '@tsoa/runtime';
 import type { RequestHandler } from 'express';
 import * as express from 'express';
 
@@ -38,7 +40,7 @@ const models: TsoaRoute.Models = {
     "Board": {
         "dataType": "refObject",
         "properties": {
-            "_id": {"ref":"ObjectId","required":true},
+            "_id": {"ref":"ObjectId"},
             "latitude": {"dataType":"float","required":true,"validators":{"minimum":{"value":-90},"maximum":{"value":90}}},
             "longitude": {"dataType":"float","required":true,"validators":{"minimum":{"value":-180},"maximum":{"value":180}}},
             "accessibility": {"ref":"Accessibility","required":true},
@@ -85,7 +87,7 @@ export function RegisterRoutes(app: express.Router) {
             ...(fetchMiddlewares<RequestHandler>(BoardsController)),
             ...(fetchMiddlewares<RequestHandler>(BoardsController.prototype.filterBoards)),
 
-            function BoardsController_filterBoards(request: any, response: any, next: any) {
+            async function BoardsController_filterBoards(request: any, response: any, next: any) {
             const args = {
                     filter: {"in":"body","name":"filter","required":true,"ref":"Filter"},
             };
@@ -96,7 +98,12 @@ export function RegisterRoutes(app: express.Router) {
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
 
-                const controller = new BoardsController();
+                const container: IocContainer = typeof iocContainer === 'function' ? (iocContainer as IocContainerFactory)(request) : iocContainer;
+
+                const controller: any = await container.get<BoardsController>(BoardsController);
+                if (typeof controller['setStatus'] === 'function') {
+                controller.setStatus(undefined);
+                }
 
 
               const promise = controller.filterBoards.apply(controller, validatedArgs as any);
@@ -110,7 +117,7 @@ export function RegisterRoutes(app: express.Router) {
             ...(fetchMiddlewares<RequestHandler>(BoardsController)),
             ...(fetchMiddlewares<RequestHandler>(BoardsController.prototype.getBoard)),
 
-            function BoardsController_getBoard(request: any, response: any, next: any) {
+            async function BoardsController_getBoard(request: any, response: any, next: any) {
             const args = {
                     boardId: {"in":"path","name":"boardId","required":true,"dataType":"string"},
             };
@@ -121,7 +128,12 @@ export function RegisterRoutes(app: express.Router) {
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
 
-                const controller = new BoardsController();
+                const container: IocContainer = typeof iocContainer === 'function' ? (iocContainer as IocContainerFactory)(request) : iocContainer;
+
+                const controller: any = await container.get<BoardsController>(BoardsController);
+                if (typeof controller['setStatus'] === 'function') {
+                controller.setStatus(undefined);
+                }
 
 
               const promise = controller.getBoard.apply(controller, validatedArgs as any);
@@ -135,7 +147,7 @@ export function RegisterRoutes(app: express.Router) {
             ...(fetchMiddlewares<RequestHandler>(BoardsController)),
             ...(fetchMiddlewares<RequestHandler>(BoardsController.prototype.updateBoard)),
 
-            function BoardsController_updateBoard(request: any, response: any, next: any) {
+            async function BoardsController_updateBoard(request: any, response: any, next: any) {
             const args = {
                     boardId: {"in":"path","name":"boardId","required":true,"dataType":"string"},
                     board: {"in":"body","name":"board","required":true,"ref":"Board"},
@@ -147,7 +159,12 @@ export function RegisterRoutes(app: express.Router) {
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
 
-                const controller = new BoardsController();
+                const container: IocContainer = typeof iocContainer === 'function' ? (iocContainer as IocContainerFactory)(request) : iocContainer;
+
+                const controller: any = await container.get<BoardsController>(BoardsController);
+                if (typeof controller['setStatus'] === 'function') {
+                controller.setStatus(undefined);
+                }
 
 
               const promise = controller.updateBoard.apply(controller, validatedArgs as any);
@@ -161,7 +178,7 @@ export function RegisterRoutes(app: express.Router) {
             ...(fetchMiddlewares<RequestHandler>(BoardsController)),
             ...(fetchMiddlewares<RequestHandler>(BoardsController.prototype.getNumbers)),
 
-            function BoardsController_getNumbers(request: any, response: any, next: any) {
+            async function BoardsController_getNumbers(request: any, response: any, next: any) {
             const args = {
             };
 
@@ -171,7 +188,12 @@ export function RegisterRoutes(app: express.Router) {
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
 
-                const controller = new BoardsController();
+                const container: IocContainer = typeof iocContainer === 'function' ? (iocContainer as IocContainerFactory)(request) : iocContainer;
+
+                const controller: any = await container.get<BoardsController>(BoardsController);
+                if (typeof controller['setStatus'] === 'function') {
+                controller.setStatus(undefined);
+                }
 
 
               const promise = controller.getNumbers.apply(controller, validatedArgs as any);

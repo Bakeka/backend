@@ -1,10 +1,18 @@
 import { Body, Controller, Get, Path, Post, Route } from "tsoa"
-import { Board } from "../entities/Board"
-import { Filter } from "../entities/Filter"
-import { Numbers } from "../entities/Numbers"
+import { injectable } from "tsyringe"
 
+import { BoardsService } from "../services/boards"
+import { Board } from "../entities/board"
+import { Filter } from "../entities/filter"
+import { Numbers } from "../entities/numbers"
+
+@injectable()
 @Route("boards")
 export class BoardsController extends Controller {
+  constructor(private boardsService: BoardsService) {
+    super()
+  }
+
   /**
    * Retrieves multiple board by using various filters. If any of the properties
    * of the filter is `undefined`, it will not be applied to the results.
@@ -13,6 +21,7 @@ export class BoardsController extends Controller {
    */
   @Post()
   public async filterBoards(@Body() filter: Filter): Promise<Board[]> {
+    this.boardsService.printConfig()
     console.log(filter)
     return []
   }
@@ -42,6 +51,9 @@ export class BoardsController extends Controller {
     throw "not implemented"
   }
 
+  /**
+   * Returns the total number of board registered for each type (see enum Type).
+   */
   @Get("numbers")
   public async getNumbers(): Promise<Numbers> {
     throw "not implemented"

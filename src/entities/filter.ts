@@ -1,4 +1,4 @@
-import { Accessibility, Material, Size, Type } from "./Enums";
+import { Accessibility, Material, Size, Type } from "./enums";
 
 /**
  * Type Filter represents a transient object used to query the API for boards.
