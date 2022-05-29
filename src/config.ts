@@ -21,6 +21,7 @@ export interface Config {
  * Type DB represents the possible configuration options for the database connection.
  */
 export interface DB {
+  db?: string
   host: string
   port?: string | number
   username: string

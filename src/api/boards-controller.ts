@@ -5,12 +5,11 @@ import { BoardsService } from "../services/boards"
 import { Board } from "../entities/board"
 import { Filter } from "../entities/filter"
 import { Numbers } from "../entities/numbers"
-import { DatabaseService } from "../services/database"
 
 @injectable()
 @Route("boards")
 export class BoardsController extends Controller {
-  constructor(private boardsService: BoardsService, private db: DatabaseService) {
+  constructor(private boardsService: BoardsService) {
     super()
   }
 
@@ -22,7 +21,6 @@ export class BoardsController extends Controller {
    */
   @Post()
   public async filterBoards(@Body() filter: Filter): Promise<Board[]> {
-    console.log(this.db.connection.id)
     return this.boardsService.filter(filter)
   }
 
@@ -32,7 +30,7 @@ export class BoardsController extends Controller {
    * @param boardId The board's identifier
    */
   @Get("{boardId}")
-  public async getBoard(@Path() boardId: string): Promise<Board> {
+  public async getBoard(@Path() boardId: string): Promise<Board | null> {
     return this.boardsService.get(boardId)
   }
 

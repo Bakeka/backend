@@ -12,9 +12,13 @@ import * as express from 'express';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
-    "Types.ObjectId": {
-        "dataType": "refAlias",
-        "type": {"dataType":"string","validators":{}},
+    "Point": {
+        "dataType": "refObject",
+        "properties": {
+            "type": {"dataType":"enum","enums":["Point"],"default":"Point"},
+            "coordinates": {"dataType":"array","array":{"dataType":"double"},"default":[],"validators":{"minItems":{"value":2},"maxItems":{"value":2}}},
+        },
+        "additionalProperties": false,
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "Accessibility": {
@@ -40,16 +44,14 @@ const models: TsoaRoute.Models = {
     "Board": {
         "dataType": "refObject",
         "properties": {
-            "_id": {"ref":"Types.ObjectId"},
-            "latitude": {"dataType":"float","required":true,"validators":{"minimum":{"value":-90},"maximum":{"value":90}}},
-            "longitude": {"dataType":"float","required":true,"validators":{"minimum":{"value":-180},"maximum":{"value":180}}},
-            "accessibility": {"ref":"Accessibility","required":true},
-            "material": {"ref":"Material","required":true},
-            "size": {"ref":"Size","required":true},
-            "traffic": {"dataType":"integer","required":true,"validators":{"minimum":{"value":1},"maximum":{"value":5}}},
-            "type": {"ref":"Type","required":true},
-            "created": {"dataType":"datetime","required":true},
-            "modified": {"dataType":"datetime","required":true},
+            "location": {"ref":"Point"},
+            "accessibility": {"ref":"Accessibility"},
+            "material": {"ref":"Material"},
+            "size": {"ref":"Size"},
+            "traffic": {"dataType":"integer","validators":{"minimum":{"value":1},"maximum":{"value":5}}},
+            "type": {"ref":"Type"},
+            "created": {"dataType":"datetime"},
+            "modified": {"dataType":"datetime"},
         },
         "additionalProperties": false,
     },
@@ -60,10 +62,9 @@ const models: TsoaRoute.Models = {
             "accessibility": {"dataType":"array","array":{"dataType":"refEnum","ref":"Accessibility"},"validators":{"maxItems":{"value":3},"uniqueItems":{"errorMsg":"true"}}},
             "material": {"dataType":"array","array":{"dataType":"refEnum","ref":"Material"},"validators":{"maxItems":{"value":5},"uniqueItems":{"errorMsg":"true"}}},
             "size": {"dataType":"array","array":{"dataType":"refEnum","ref":"Size"},"validators":{"maxItems":{"value":3},"uniqueItems":{"errorMsg":"true"}}},
-            "traffic": {"dataType":"array","array":{"dataType":"integer"},"validators":{"minimum":{"value":1},"maximum":{"value":5},"uniqueItems":{"errorMsg":"true"}}},
+            "traffic": {"dataType":"array","array":{"dataType":"double"},"validators":{"minimum":{"value":1},"maximum":{"value":5},"uniqueItems":{"errorMsg":"true"}}},
             "type": {"dataType":"array","array":{"dataType":"refEnum","ref":"Type"},"validators":{"maxItems":{"value":5},"uniqueItems":{"errorMsg":"true"}}},
-            "latitude": {"dataType":"array","array":{"dataType":"double"},"validators":{"minItems":{"value":2},"maxItems":{"value":2},"minimum":{"value":-90},"maximum":{"value":90}}},
-            "longitude": {"dataType":"array","array":{"dataType":"double"},"validators":{"minItems":{"value":2},"maxItems":{"value":2},"minimum":{"value":-180},"maximum":{"value":180}}},
+            "box": {"dataType":"array","array":{"dataType":"array","array":{"dataType":"double"}},"validators":{"minItems":{"value":2},"maxItems":{"value":2}}},
         },
         "additionalProperties": false,
     },

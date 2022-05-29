@@ -22,20 +22,20 @@ export enum Accessibility {
  * Enum Material describes a board's surface material.
  */
 export enum Material {
-  Wood = "WOOD",
-  Metal = "METAL",
-  Plastic = "PLASTIC",
-  Glass = "GLASS",
-  Other = "OTHER"
+  WOOD = "WOOD",
+  METAL = "METAL",
+  PLASTIC = "PLASTIC",
+  GLASS = "GLASS",
+  OTHER = "OTHER"
 }
 
 /**
  * Enum Size describes a boards's general physical size.
  */
 export enum Size {
-  Small = "SMALL",
-  Medium = "MEDIUM",
-  Large = "LARGE"
+  SMALL = "SMALL",
+  MEDIUM = "MEDIUM",
+  LARGE = "LARGE"
 }
 
 /**
@@ -45,25 +45,25 @@ export enum Type {
   /**
    * An obituary for the deceased.
    */
-  Obituary = "OBITUARY",
+  OBITUARY = "OBITUARY",
 
   /**
    * A politics-oriented bulletin board.
    */
-  Politics = "POLITICS",
+  POLITICS = "POLITICS",
 
   /**
    * A board for notices and advisories.
    */
-  Notice = "NOTICE",
+  NOTICE = "NOTICE",
 
   /**
    * A board for the public with a variety of postable media.
    */
-  Public = "PUBLIC",
+  PUBLIC = "PUBLIC",
 
   /**
    * A board which does not fit in any of the other categories.
    */
-  Other = "OTHER"
+  OTHER = "OTHER"
 }

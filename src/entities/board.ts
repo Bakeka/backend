@@ -1,51 +1,39 @@
-import { Types } from "mongoose";
-import { Accessibility, Material, Size, Type } from "./enums";
+import { getModelForClass, Index, Prop } from "@typegoose/typegoose"
+
+import { Accessibility, Material, Size, Type } from "./enums"
+import { Point } from "./point"
 
 /**
  * Type Board represents a bulletin board.
  */
-export interface Board {
+@Index({ location: '2dsphere' })
+export class Board {
   /**
-   * Internal identifier for the board.
-   *
-   * @example "507c7f79bcf86cd7994f6c0e"
+   * Board position as GeoJSON Point (see
+   * [geospatial queries](https://www.mongodb.com/docs/upcoming/geospatial-queries/)
+   * and [type definition](https://www.mongodb.com/docs/manual/reference/geojson/)).
+   * Longitude is the first element and latitude follows.
    */
-  _id?: Types.ObjectId
-
-  /**
-   * Latitude coordinate of the board. Has to be between `-90.0` and `90.0`.
-   *
-   * @isFloat
-   * @minimum -90.0
-   * @maximum +90.0
-   * @example -45.7
-   */
-  latitude: number
-
-  /**
-   * Longitude coordinate of the board. Has to be between `-180.0` and `180.0`.
-   *
-   * @isFloat
-   * @minimum -180.0
-   * @maximum +180.0
-   * @example -103.4
-   */
-  longitude: number
+  @Prop({ type: Point })
+  public location?: Point
 
   /**
    * Board accessibility.
    */
-  accessibility: Accessibility
+  @Prop({ type: String, enum: Object.keys(Accessibility) })
+  public accessibility?: Accessibility
 
   /**
    * Board material.
    */
-  material: Material
+  @Prop({ type: String, enum: Object.keys(Material) })
+  public material?: Material
 
   /**
    * Board size.
    */
-  size: Size
+  @Prop({ type: String, enum: Object.keys(Size) })
+  public size?: Size
 
   /**
    * Board traffic amount.
@@ -54,22 +42,26 @@ export interface Board {
    * @minimum 1
    * @maximum 5
    */
-  traffic: number
+  @Prop({ min: 1, max: 5 })
+  public traffic?: number
 
   /**
    * Board type.
    */
-  type: Type
+  @Prop({ type: String, enum: Object.keys(Type), index: true })
+  public type?: Type
 
   /**
    * Board creation date.
    */
-  created: Date
+  @Prop({ default: Date.now })
+  public created?: Date
 
   /**
    * Board last modification date.
    */
-  modified: Date
+  @Prop({ default: Date.now })
+  public modified?: Date
 }
 
-
+export const BoardModel = getModelForClass(Board)
