@@ -14,6 +14,14 @@ export class BoardsController extends Controller {
   }
 
   /**
+   * Returns the total number of board registered for each type (see enum Type).
+   */
+  @Get("numbers")
+  public async getNumbers(): Promise<Numbers> {
+    return this.boardsService.numbers()
+  }
+
+  /**
    * Retrieves multiple board by using various filters. If any of the properties
    * of the filter is `undefined`, it will not be applied to the results.
    *
@@ -44,13 +52,5 @@ export class BoardsController extends Controller {
   @Post("{boardId}")
   public async updateBoard(@Path() boardId: string, @Body() board: Board): Promise<void> {
     return this.boardsService.update(boardId, board)
-  }
-
-  /**
-   * Returns the total number of board registered for each type (see enum Type).
-   */
-  @Get("numbers")
-  public async getNumbers(): Promise<Numbers> {
-    return this.boardsService.numbers()
   }
 }

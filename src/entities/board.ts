@@ -7,6 +7,7 @@ import { Point } from "./point"
  * Type Board represents a bulletin board.
  */
 @Index({ location: '2dsphere' })
+@Index({ type: 'text' })
 export class Board {
   /**
    * Board position as GeoJSON Point (see

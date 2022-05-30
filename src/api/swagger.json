@@ -6,6 +6,32 @@
 		"requestBodies": {},
 		"responses": {},
 		"schemas": {
+			"Numbers": {
+				"properties": {
+					"OBITUARY": {
+						"type": "number",
+						"format": "double"
+					},
+					"POLITICS": {
+						"type": "number",
+						"format": "double"
+					},
+					"NOTICE": {
+						"type": "number",
+						"format": "double"
+					},
+					"PUBLIC": {
+						"type": "number",
+						"format": "double"
+					},
+					"OTHER": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object",
+				"description": "Type Numbers contains the total number of board registered for each `Type`."
+			},
 			"Point": {
 				"description": "Type Point represents a GeoJSON point.",
 				"properties": {
@@ -213,32 +239,6 @@
 				},
 				"type": "object",
 				"additionalProperties": false
-			},
-			"Numbers": {
-				"properties": {
-					"OBITUARY": {
-						"type": "number",
-						"format": "double"
-					},
-					"POLITICS": {
-						"type": "number",
-						"format": "double"
-					},
-					"NOTICE": {
-						"type": "number",
-						"format": "double"
-					},
-					"PUBLIC": {
-						"type": "number",
-						"format": "double"
-					},
-					"OTHER": {
-						"type": "number",
-						"format": "double"
-					}
-				},
-				"type": "object",
-				"description": "Type Numbers contains the total number of board registered for each\n{@link Type}."
 			}
 		},
 		"securitySchemes": {}
@@ -256,6 +256,26 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
+		"/boards/numbers": {
+			"get": {
+				"operationId": "GetNumbers",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Numbers"
+								}
+							}
+						}
+					}
+				},
+				"description": "Returns the total number of board registered for each type (see enum Type).",
+				"security": [],
+				"parameters": []
+			}
+		},
 		"/boards": {
 			"post": {
 				"operationId": "FilterBoards",
@@ -357,26 +377,6 @@
 						}
 					}
 				}
-			}
-		},
-		"/boards/numbers": {
-			"get": {
-				"operationId": "GetNumbers",
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Numbers"
-								}
-							}
-						}
-					}
-				},
-				"description": "Returns the total number of board registered for each type (see enum Type).",
-				"security": [],
-				"parameters": []
 			}
 		}
 	},
