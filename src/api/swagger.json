@@ -33,7 +33,7 @@
 				"description": "Type Numbers contains the total number of board registered for each `Type`."
 			},
 			"Point": {
-				"description": "Type Point represents a GeoJSON point.",
+				"description": "Type Point represents a [GeoJSON point](https://www.mongodb.com/docs/manual/reference/geojson/#point).",
 				"properties": {
 					"type": {
 						"type": "string",
@@ -272,6 +272,9 @@
 					}
 				},
 				"description": "Returns the total number of board registered for each type (see enum Type).",
+				"tags": [
+					"Boards"
+				],
 				"security": [],
 				"parameters": []
 			}
@@ -295,6 +298,9 @@
 					}
 				},
 				"description": "Retrieves multiple board by using various filters. If any of the properties\nof the filter is `undefined`, it will not be applied to the results.",
+				"tags": [
+					"Boards"
+				],
 				"security": [],
 				"parameters": [],
 				"requestBody": {
@@ -332,6 +338,9 @@
 					}
 				},
 				"description": "Retrieves a single board by its internal ID.",
+				"tags": [
+					"Boards"
+				],
 				"security": [],
 				"parameters": [
 					{
@@ -348,11 +357,14 @@
 			"post": {
 				"operationId": "UpdateBoard",
 				"responses": {
-					"204": {
-						"description": "No content"
+					"201": {
+						"description": "Created"
 					}
 				},
-				"description": "Updated a single board by its internal ID.",
+				"description": "Updated a single board by its internal ID. All\n`undefined` fields in the incoming object will be ignored. Validation is\nperformed on the data as follows:\n- Enums are checked against their representation in code\n- `location` has to be a valid GeoJSON Point **and** no further than 500 metres\n  from the original board",
+				"tags": [
+					"Boards"
+				],
 				"security": [],
 				"parameters": [
 					{

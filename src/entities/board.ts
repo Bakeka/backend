@@ -15,25 +15,25 @@ export class Board {
    * and [type definition](https://www.mongodb.com/docs/manual/reference/geojson/)).
    * Longitude is the first element and latitude follows.
    */
-  @Prop({ type: Point })
+  @Prop({ type: Point, _id: false })
   public location?: Point
 
   /**
    * Board accessibility.
    */
-  @Prop({ type: String, enum: Object.keys(Accessibility) })
+  @Prop({ type: String, enum: Accessibility })
   public accessibility?: Accessibility
 
   /**
    * Board material.
    */
-  @Prop({ type: String, enum: Object.keys(Material) })
+  @Prop({ type: String, enum: Material })
   public material?: Material
 
   /**
    * Board size.
    */
-  @Prop({ type: String, enum: Object.keys(Size) })
+  @Prop({ type: String, enum: Size })
   public size?: Size
 
   /**
@@ -49,7 +49,7 @@ export class Board {
   /**
    * Board type.
    */
-  @Prop({ type: String, enum: Object.keys(Type), index: true })
+  @Prop({ type: String, enum: Type, index: true })
   public type?: Type
 
   /**
@@ -65,4 +65,7 @@ export class Board {
   public modified?: Date
 }
 
+/**
+ * The MongoDB model for type Board.
+ */
 export const BoardModel = getModelForClass(Board)

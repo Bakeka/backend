@@ -21,10 +21,29 @@ export interface Config {
  * Type DB represents the possible configuration options for the database connection.
  */
 export interface DB {
-  db?: string
-  host: string
+  /**
+   * Database name.
+   */
+  db: string
+
+  /**
+   * Database host/FQDN.
+   */
+  host?: string
+
+  /**
+   * Database port. Defaults to `27017`.
+   */
   port?: string | number
-  username: string
+
+  /**
+   * Username for the connection.
+   */
+  username?: string
+
+  /**
+   * Password for the connection.
+   */
   password?: string
 }
 
@@ -34,6 +53,10 @@ export interface DB {
  */
 export const DefaultConfig: Config = {
   port: 8080,
+  db: {
+    db: "bakeka",
+    host: "localhost"
+  }
 }
 
 /**
@@ -62,13 +85,13 @@ export function load(path: string | undefined): Config {
       ([key, value]) => [key.replace("BKK_", ""), value]
     )
     .forEach(
-      ([key, value]) => key && key
+      ([key, value]) => key && value && key
         .split("_")
         .reduce((acc: any, current, index, keys) => {
           current = current.toLowerCase()
           if (keys.length - 1 === index) {
             acc[current] = value
-            return acc
+            return acc[current]
           }
           if (!acc[current])
             acc[current] = {}

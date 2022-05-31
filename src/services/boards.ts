@@ -5,6 +5,7 @@ import { injectable, singleton } from "tsyringe"
 import { Board, BoardModel } from "../entities/board"
 import { Filter } from "../entities/filter"
 import { Numbers } from "../entities/numbers"
+import { validatePoint } from "../entities/point"
 
 @injectable()
 @singleton()
@@ -60,7 +61,11 @@ export class BoardsService {
 
   /**
    * Updated an existing board's data with a new board object's data. All
-   * `undefined` fields in the new object will be ignored.
+   * `undefined` fields in the incoming object will be ignored. Validation is
+   * performed on the data as follows:
+   * - Enums are checked against their representation in code
+   * - `location` has to be a valid GeoJSON Point **and** no further than 500 metres
+   *   from the original board
    *
    * @param boardId A Mongo ObjectID as string
    * @param board The new board object to use for the update
@@ -71,8 +76,30 @@ export class BoardsService {
       if (!board[key]) delete board[key]
     })
 
-    // TODO: validate + calculate mean position etc
-    BoardModel.updateOne({ _id: boardId }, board).exec()
+    const query: FilterQuery<DocumentType<Board>> = { _id: boardId }
+
+    // If updating location data and the data is valid,
+    if (board.location) {
+      const validateResult = validatePoint(board.location, "board.location")
+      console.log(validateResult)
+      if (validateResult) throw validateResult
+
+      console.log("Board is valid")
+      query.location = {
+        $near: {
+          // only select the board to be updated if it's within 500 metres of
+          // the new object
+          $geometry: {
+            type: "Point",
+            coordinates: board.location.coordinates
+          },
+          $maxDistance: 500
+        }
+      }
+    }
+
+    // TODO: calculate mean position
+    BoardModel.updateOne(query, board).exec().catch(err => { throw err })
   }
 
   /**
