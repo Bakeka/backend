@@ -81,10 +81,8 @@ export class BoardsService {
     // If updating location data and the data is valid,
     if (board.location) {
       const validateResult = validatePoint(board.location, "board.location")
-      console.log(validateResult)
       if (validateResult) throw validateResult
 
-      console.log("Board is valid")
       query.location = {
         $near: {
           // only select the board to be updated if it's within 500 metres of
