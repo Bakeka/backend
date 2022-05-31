@@ -6,8 +6,62 @@
 		"requestBodies": {},
 		"responses": {},
 		"schemas": {
-			"Types.ObjectId": {
-				"type": "string"
+			"Numbers": {
+				"properties": {
+					"OBITUARY": {
+						"type": "number",
+						"format": "double"
+					},
+					"POLITICS": {
+						"type": "number",
+						"format": "double"
+					},
+					"NOTICE": {
+						"type": "number",
+						"format": "double"
+					},
+					"PUBLIC": {
+						"type": "number",
+						"format": "double"
+					},
+					"OTHER": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object",
+				"description": "Type Numbers contains the total number of board registered for each `Type`."
+			},
+			"Point": {
+				"description": "Type Point represents a [GeoJSON point](https://www.mongodb.com/docs/manual/reference/geojson/#point).",
+				"properties": {
+					"type": {
+						"type": "string",
+						"enum": [
+							"Point"
+						],
+						"nullable": false,
+						"description": "GeoJSON type. Is always \"Point\".",
+						"default": "Point"
+					},
+					"coordinates": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array",
+						"description": "GeoJSON coordinates. Longitude is the first element and latitude follows.",
+						"example": [
+							-103.4,
+							-45.7
+						],
+						"default": [],
+						"minItems": 2,
+						"maxItems": 2
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
 			},
 			"Accessibility": {
 				"description": "Enum Accessibility represents a board's physical environment and reachability.",
@@ -52,26 +106,9 @@
 			"Board": {
 				"description": "Type Board represents a bulletin board.",
 				"properties": {
-					"_id": {
-						"$ref": "#/components/schemas/Types.ObjectId",
-						"description": "Internal identifier for the board.",
-						"example": "507c7f79bcf86cd7994f6c0e"
-					},
-					"latitude": {
-						"type": "number",
-						"format": "float",
-						"description": "Latitude coordinate of the board. Has to be between `-90.0` and `90.0`.",
-						"example": -45.7,
-						"minimum": -90,
-						"maximum": 90
-					},
-					"longitude": {
-						"type": "number",
-						"format": "float",
-						"description": "Longitude coordinate of the board. Has to be between `-180.0` and `180.0`.",
-						"example": -103.4,
-						"minimum": -180,
-						"maximum": 180
+					"location": {
+						"$ref": "#/components/schemas/Point",
+						"description": "Board position as GeoJSON Point (see\n[geospatial queries](https://www.mongodb.com/docs/upcoming/geospatial-queries/)\nand [type definition](https://www.mongodb.com/docs/manual/reference/geojson/)).\nLongitude is the first element and latitude follows."
 					},
 					"accessibility": {
 						"$ref": "#/components/schemas/Accessibility",
@@ -107,17 +144,6 @@
 						"description": "Board last modification date."
 					}
 				},
-				"required": [
-					"latitude",
-					"longitude",
-					"accessibility",
-					"material",
-					"size",
-					"traffic",
-					"type",
-					"created",
-					"modified"
-				],
 				"type": "object",
 				"additionalProperties": false
 			},
@@ -163,8 +189,8 @@
 					},
 					"traffic": {
 						"items": {
-							"type": "integer",
-							"format": "int32"
+							"type": "number",
+							"format": "double"
 						},
 						"type": "array",
 						"description": "Filter the results' traffic amount, if defined.",
@@ -187,67 +213,32 @@
 						],
 						"maxItems": 5
 					},
-					"latitude": {
+					"box": {
 						"items": {
-							"type": "number",
-							"format": "double"
+							"items": {
+								"type": "number",
+								"format": "double"
+							},
+							"type": "array"
 						},
 						"type": "array",
-						"description": "Minimum and maximum latitudes for the results.",
+						"description": "Longitude and latitude \"box\" for the results. All boards returned will be\nlocated inside this box. Each of the array items is the tuple\n`[longitude, latitude]`, akin to GeoJSON points.",
 						"example": [
-							-45.7,
-							23.2
+							[
+								-103.4,
+								-45.7
+							],
+							[
+								95.8,
+								23.2
+							]
 						],
 						"minItems": 2,
-						"maxItems": 2,
-						"minimum": -90,
-						"maximum": 90
-					},
-					"longitude": {
-						"items": {
-							"type": "number",
-							"format": "double"
-						},
-						"type": "array",
-						"description": "Minimum and maximum latitudes for the results.",
-						"example": [
-							-103.4,
-							95.8
-						],
-						"minItems": 2,
-						"maxItems": 2,
-						"minimum": -180,
-						"maximum": 180
+						"maxItems": 2
 					}
 				},
 				"type": "object",
 				"additionalProperties": false
-			},
-			"Numbers": {
-				"properties": {
-					"OBITUARY": {
-						"type": "number",
-						"format": "double"
-					},
-					"POLITICS": {
-						"type": "number",
-						"format": "double"
-					},
-					"NOTICE": {
-						"type": "number",
-						"format": "double"
-					},
-					"PUBLIC": {
-						"type": "number",
-						"format": "double"
-					},
-					"OTHER": {
-						"type": "number",
-						"format": "double"
-					}
-				},
-				"type": "object",
-				"description": "Type Numbers contains the total number of board registered for each\n{@link Type}."
 			}
 		},
 		"securitySchemes": {}
@@ -265,6 +256,29 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
+		"/boards/numbers": {
+			"get": {
+				"operationId": "GetNumbers",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Numbers"
+								}
+							}
+						}
+					}
+				},
+				"description": "Returns the total number of board registered for each type (see enum Type).",
+				"tags": [
+					"Boards"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
 		"/boards": {
 			"post": {
 				"operationId": "FilterBoards",
@@ -284,6 +298,9 @@
 					}
 				},
 				"description": "Retrieves multiple board by using various filters. If any of the properties\nof the filter is `undefined`, it will not be applied to the results.",
+				"tags": [
+					"Boards"
+				],
 				"security": [],
 				"parameters": [],
 				"requestBody": {
@@ -309,13 +326,21 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/Board"
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/Board"
+										}
+									],
+									"nullable": true
 								}
 							}
 						}
 					}
 				},
 				"description": "Retrieves a single board by its internal ID.",
+				"tags": [
+					"Boards"
+				],
 				"security": [],
 				"parameters": [
 					{
@@ -332,11 +357,14 @@
 			"post": {
 				"operationId": "UpdateBoard",
 				"responses": {
-					"204": {
-						"description": "No content"
+					"201": {
+						"description": "Created"
 					}
 				},
-				"description": "Updated a single board by its internal ID.",
+				"description": "Updated a single board by its internal ID. All\n`undefined` fields in the incoming object will be ignored. Validation is\nperformed on the data as follows:\n- Enums are checked against their representation in code\n- `location` has to be a valid GeoJSON Point **and** no further than 500 metres\n  from the original board",
+				"tags": [
+					"Boards"
+				],
 				"security": [],
 				"parameters": [
 					{
@@ -361,26 +389,6 @@
 						}
 					}
 				}
-			}
-		},
-		"/boards/numbers": {
-			"get": {
-				"operationId": "GetNumbers",
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Numbers"
-								}
-							}
-						}
-					}
-				},
-				"description": "Returns the total number of board registered for each type (see enum Type).",
-				"security": [],
-				"parameters": []
 			}
 		}
 	},

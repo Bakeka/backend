@@ -9,6 +9,7 @@ import { DatabaseService } from "./services/database"
 
 import swaggerDoc from "./api/swagger.json"
 import swaggerUi from "swagger-ui-express"
+import { ValidateError } from "tsoa"
 
 // Parse CLI arguments
 const args = process.argv.slice(2)
@@ -49,9 +50,30 @@ app.use("/docs", swaggerUi.serve, async (_req: Request, res: Response) => {
 routes.RegisterRoutes(app)
 
 // Middleware, error handling
-app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
-  console.error("ERROR:", err)
-  res.sendStatus(500)
+app.use((err: unknown, req: Request, res: Response, next: NextFunction): Response | void => {
+  if (err instanceof ValidateError) {
+    console.warn(`validation error for ${req.path}:`, err.fields);
+    return res.status(422).json({
+      message: "Validation Failed",
+      details: err?.fields,
+    })
+  }
+
+  if (err instanceof Error) {
+    console.error(`error on ${req.path}:`, err)
+    return res.status(500).json({
+      message: "Internal Server Error",
+    })
+  }
+
+  next()
+})
+
+// Middleware, not found
+app.use((_req: Request, res: Response) => {
+  res.status(404).send({
+    message: "Not Found",
+  })
 })
 
 // Middleware, timeout
