@@ -37,7 +37,7 @@ export interface Filter {
   /**
    * Filter the results' traffic amount, if defined.
    *
-   * @isInt
+   * @isArray
    * @minimum 1
    * @maximum 5
    * @uniqueItems true
@@ -56,26 +56,15 @@ export interface Filter {
   type?: Type[]
 
   /**
-   * Minimum and maximum latitudes for the results.
+   * Longitude and latitude "box" for the results. All boards returned will be
+   * located inside this box. Each of the array items is the tuple
+   * `[longitude, latitude]`, akin to GeoJSON points.
    *
    * @isArray
    * @minItems 2
    * @maxItems 2
-   * @minimum -90.0
-   * @maximum +90.0
-   * @example [-45.7, 23.2]
+   * @items array
+   * @example [[-103.4, -45.7], [95.8, 23.2]]
    */
-  latitude?: number[]
-
-  /**
-   * Minimum and maximum latitudes for the results.
-   *
-   * @isArray
-   * @minItems 2
-   * @maxItems 2
-   * @minimum -180.0
-   * @maximum +180.0
-   * @example [-103.4, 95.8]
-   */
-  longitude?: number[]
+  box?: number[][]
 }

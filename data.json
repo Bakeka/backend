@@ -1,0 +1,1602 @@
+[
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -18.713093405409694,
+        63.879131187112904
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "PLASTIC",
+    "size": "LARGE",
+    "traffic": 2,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        135.4052135006005,
+        -7.483275709466838
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "METAL",
+    "size": "LARGE",
+    "traffic": 3,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -83.73516872109226,
+        84.32270202030062
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "WOOD",
+    "size": "MEDIUM",
+    "traffic": 1,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -150.7378735505712,
+        -31.755580336079234
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 1,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        73.43028358975184,
+        50.22630278312607
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "METAL",
+    "size": "MEDIUM",
+    "traffic": 5,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -116.81939136396971,
+        86.04135483690453
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "OTHER",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -104.20214239773792,
+        -87.58665523447941
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "PLASTIC",
+    "size": "SMALL",
+    "traffic": 3,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        70.2355067244934,
+        62.316312214294186
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "WOOD",
+    "size": "LARGE",
+    "traffic": 5,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -79.23374924553518,
+        -64.70312116744498
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "PLASTIC",
+    "size": "LARGE",
+    "traffic": 5,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -125.07855863134277,
+        -4.13537774980847
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "OTHER",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        16.718803998107063,
+        9.873614897307448
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "LARGE",
+    "traffic": 5,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        40.54863939296473,
+        -85.58102591500493
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 5,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -178.7916545547058,
+        -25.304757269805762
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -101.36137877469417,
+        31.648053222165615
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "WOOD",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        102.38712569519816,
+        -6.230738435804156
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 2,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -146.49279966996144,
+        46.911917185940354
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "METAL",
+    "size": "MEDIUM",
+    "traffic": 2,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        134.98604810292989,
+        -76.42156870604987
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "OTHER",
+    "size": "SMALL",
+    "traffic": 3,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -75.56043051520953,
+        87.12537603701313
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "GLASS",
+    "size": "SMALL",
+    "traffic": 3,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        94.22053514448345,
+        67.5438820463099
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "OTHER",
+    "size": "LARGE",
+    "traffic": 4,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        49.55732851170444,
+        -54.83697012873915
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 2,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        13.285740937132914,
+        -54.63532430172676
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 2,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -121.04927099318994,
+        78.87847150435616
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "WOOD",
+    "size": "MEDIUM",
+    "traffic": 2,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -94.8834650288532,
+        -13.014481874175445
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 1,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -37.7724031410481,
+        14.977039627711946
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "METAL",
+    "size": "MEDIUM",
+    "traffic": 4,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -173.3550169804311,
+        41.07930699461187
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "GLASS",
+    "size": "LARGE",
+    "traffic": 4,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -116.75782924165006,
+        -55.99044933287145
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 5,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -148.1081257390846,
+        -55.54733976245452
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "METAL",
+    "size": "MEDIUM",
+    "traffic": 4,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -154.97867140081496,
+        -10.68184446687917
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "PLASTIC",
+    "size": "MEDIUM",
+    "traffic": 1,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -21.68190919612732,
+        11.1256818120534
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "METAL",
+    "size": "LARGE",
+    "traffic": 5,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -134.72231149900117,
+        20.968542481589566
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "OTHER",
+    "size": "LARGE",
+    "traffic": 3,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -126.19050858573385,
+        37.162783405897486
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "LARGE",
+    "traffic": 4,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        82.12245678444492,
+        21.30212192974669
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "OTHER",
+    "size": "LARGE",
+    "traffic": 2,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        33.19758548603164,
+        -20.24580718870301
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "GLASS",
+    "size": "LARGE",
+    "traffic": 2,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -128.08959743925428,
+        67.82434869380907
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 5,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        10.117485201776361,
+        -82.71605224298106
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "WOOD",
+    "size": "MEDIUM",
+    "traffic": 3,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        166.1637359447298,
+        -37.667280331473314
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "OTHER",
+    "size": "MEDIUM",
+    "traffic": 1,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -63.327774622391985,
+        23.581539102485735
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "PLASTIC",
+    "size": "MEDIUM",
+    "traffic": 1,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        99.08201290313781,
+        44.3325486087239
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "METAL",
+    "size": "LARGE",
+    "traffic": 2,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -149.5988762986515,
+        -4.147282059023652
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "LARGE",
+    "traffic": 3,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        158.49926953730272,
+        -55.52309876382363
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "OTHER",
+    "size": "SMALL",
+    "traffic": 3,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        125.5333553423414,
+        -67.71492609215201
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 5,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -103.91586218028056,
+        87.74027096110757
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "WOOD",
+    "size": "LARGE",
+    "traffic": 1,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -111.32484005150904,
+        -69.34237381708911
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "WOOD",
+    "size": "LARGE",
+    "traffic": 5,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        154.0568517224093,
+        40.35301015153891
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "WOOD",
+    "size": "SMALL",
+    "traffic": 2,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -31.227576828461025,
+        25.519677269726657
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 2,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        100.71527772718838,
+        57.76831416507406
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "PLASTIC",
+    "size": "SMALL",
+    "traffic": 4,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        3.5110953207748423,
+        72.46880410262455
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "WOOD",
+    "size": "SMALL",
+    "traffic": 2,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        16.36073788017646,
+        -59.72260769575572
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "OTHER",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        165.44634162241982,
+        47.688044618896924
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "GLASS",
+    "size": "SMALL",
+    "traffic": 5,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -27.56154819838963,
+        18.817845436418523
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "SMALL",
+    "traffic": 2,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -116.10781681564126,
+        32.058327155542244
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "GLASS",
+    "size": "LARGE",
+    "traffic": 1,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        150.10391552637373,
+        -66.18845203565863
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "METAL",
+    "size": "LARGE",
+    "traffic": 2,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        107.31287924127491,
+        9.767530510920025
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "PLASTIC",
+    "size": "LARGE",
+    "traffic": 5,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        104.50150777243044,
+        76.7466204723143
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "OTHER",
+    "size": "SMALL",
+    "traffic": 4,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        133.9377843946092,
+        84.69359976826246
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "OTHER",
+    "size": "SMALL",
+    "traffic": 2,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -105.36960034638521,
+        70.00225443807588
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "GLASS",
+    "size": "SMALL",
+    "traffic": 3,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -40.427472749751274,
+        -53.98074911734995
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "PLASTIC",
+    "size": "MEDIUM",
+    "traffic": 2,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        87.23341108113698,
+        12.143519610763107
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 5,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -54.37110585804041,
+        -8.304274637524088
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "PLASTIC",
+    "size": "MEDIUM",
+    "traffic": 3,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        24.586430530638665,
+        52.144608663854626
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        4.668379754256421,
+        70.22569987750055
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "WOOD",
+    "size": "SMALL",
+    "traffic": 3,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -31.58143689548669,
+        -2.5236109668377367
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "OTHER",
+    "size": "MEDIUM",
+    "traffic": 3,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -97.5622061761359,
+        7.42392102964358
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "OTHER",
+    "size": "MEDIUM",
+    "traffic": 5,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        80.74023692064333,
+        23.36207770348014
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 3,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -166.10140587709137,
+        -15.153166130995828
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "WOOD",
+    "size": "LARGE",
+    "traffic": 3,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -16.294148107437394,
+        -59.76717881441597
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "PLASTIC",
+    "size": "LARGE",
+    "traffic": 2,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        134.61640126299665,
+        67.77709025714717
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "METAL",
+    "size": "MEDIUM",
+    "traffic": 3,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -66.80040800820471,
+        -54.05157461081587
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 5,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        174.6254412521111,
+        70.84322769400598
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "PLASTIC",
+    "size": "LARGE",
+    "traffic": 5,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -83.59005317433771,
+        -21.446492520291002
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "WOOD",
+    "size": "LARGE",
+    "traffic": 2,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -83.80642245277056,
+        6.741423055577684
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "METAL",
+    "size": "MEDIUM",
+    "traffic": 2,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        64.80395803079733,
+        26.347367398160074
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 4,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        28.832651822587025,
+        -13.535506316014661
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "WOOD",
+    "size": "LARGE",
+    "traffic": 4,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -96.40348528465948,
+        -44.62383433255941
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 3,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        12.760552193872996,
+        -10.620654569559548
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 4,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -104.01134615408213,
+        -27.383122229285867
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "METAL",
+    "size": "MEDIUM",
+    "traffic": 3,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -165.25117781492793,
+        62.55928236567516
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        108.73588211158858,
+        61.74115552590851
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 4,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -76.17753409630423,
+        -2.557453728082592
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "WOOD",
+    "size": "SMALL",
+    "traffic": 3,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        64.01014248036543,
+        38.47816976989665
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "PLASTIC",
+    "size": "MEDIUM",
+    "traffic": 5,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        115.65456583560575,
+        -66.5306622693076
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 3,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        58.09848284294583,
+        75.57316314476822
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "PLASTIC",
+    "size": "MEDIUM",
+    "traffic": 1,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        38.139426060971914,
+        -63.5265491760256
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "PLASTIC",
+    "size": "SMALL",
+    "traffic": 4,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        5.431317739024053,
+        38.48351903339898
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "WOOD",
+    "size": "MEDIUM",
+    "traffic": 4,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -33.1609623212772,
+        -41.481832805728864
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "WOOD",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        48.205775951077044,
+        -89.9736962436988
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "SMALL",
+    "traffic": 3,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        78.22993318013948,
+        -7.655420476304158
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "WOOD",
+    "size": "LARGE",
+    "traffic": 1,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -48.61040051622513,
+        4.875013247242421
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "SMALL",
+    "traffic": 4,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        40.043202702950964,
+        -65.85117595473393
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 2,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        94.50580079345565,
+        30.446595237532918
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "METAL",
+    "size": "SMALL",
+    "traffic": 2,
+    "type": "POLITICS",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -148.21715047201576,
+        -27.998291666399638
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "LARGE",
+    "traffic": 5,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -153.97582705012792,
+        -77.19526609646451
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "OTHER",
+    "size": "SMALL",
+    "traffic": 5,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        55.261476021455536,
+        45.071424574029066
+      ]
+    },
+    "accessibility": "INACCESSIBLE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 4,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -4.238621952538381,
+        1.51297893621161
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "OTHER",
+    "size": "LARGE",
+    "traffic": 3,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -87.20413043578249,
+        -31.623745182643326
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "WOOD",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        69.55621499200385,
+        -23.34304596866356
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "OTHER",
+    "size": "MEDIUM",
+    "traffic": 2,
+    "type": "OTHER",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -63.82696447469753,
+        36.153540821935394
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "WOOD",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "NOTICE",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -136.5630908433793,
+        59.53428180011423
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "GLASS",
+    "size": "MEDIUM",
+    "traffic": 2,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        65.46512388941906,
+        18.332837296261403
+      ]
+    },
+    "accessibility": "PRIVATE",
+    "material": "OTHER",
+    "size": "SMALL",
+    "traffic": 1,
+    "type": "OBITUARY",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  },
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -117.46804979583212,
+        11.12439814433975
+      ]
+    },
+    "accessibility": "PUBLIC",
+    "material": "OTHER",
+    "size": "SMALL",
+    "traffic": 5,
+    "type": "PUBLIC",
+    "created": 1653904515447,
+    "modified": 1653904515447
+  }
+]

@@ -21,9 +21,29 @@ export interface Config {
  * Type DB represents the possible configuration options for the database connection.
  */
 export interface DB {
-  host: string
+  /**
+   * Database name.
+   */
+  db: string
+
+  /**
+   * Database host/FQDN.
+   */
+  host?: string
+
+  /**
+   * Database port. Defaults to `27017`.
+   */
   port?: string | number
-  username: string
+
+  /**
+   * Username for the connection.
+   */
+  username?: string
+
+  /**
+   * Password for the connection.
+   */
   password?: string
 }
 
@@ -33,6 +53,10 @@ export interface DB {
  */
 export const DefaultConfig: Config = {
   port: 8080,
+  db: {
+    db: "bakeka",
+    host: "localhost"
+  }
 }
 
 /**
@@ -42,15 +66,15 @@ export const DefaultConfig: Config = {
  * will then be merged over the parsed/default configuration).
  *
  * @param {(string|undefined)} path - The path (can be relative) of the JSON configuration file to load
+ * @param {(Config|undefined)} defaultConfig - A Config object to use as default instead of `DefaultConfig`
  * @returns {Config} A populated {@link Config} object or DefaultConfig if `path` is `undefined`
  */
-export function load(path: string | undefined): Config {
+export function load(path: string | undefined, defaultConfig?: Config): Config {
   const config: Config = path ?
-    <Config> JSON.parse(
+    <Config>JSON.parse(
       readFileSync(resolve(cwd(), path))
         .toString()
-    ) :
-    DefaultConfig
+    ) : defaultConfig || DefaultConfig
 
   // Override the config object with env variables
   Object.entries(env)
@@ -61,13 +85,13 @@ export function load(path: string | undefined): Config {
       ([key, value]) => [key.replace("BKK_", ""), value]
     )
     .forEach(
-      ([key, value]) => key && key
+      ([key, value]) => key && value && key
         .split("_")
         .reduce((acc: any, current, index, keys) => {
           current = current.toLowerCase()
           if (keys.length - 1 === index) {
             acc[current] = value
-            return acc
+            return acc[current]
           }
           if (!acc[current])
             acc[current] = {}
