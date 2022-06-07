@@ -66,15 +66,15 @@ export const DefaultConfig: Config = {
  * will then be merged over the parsed/default configuration).
  *
  * @param {(string|undefined)} path - The path (can be relative) of the JSON configuration file to load
+ * @param {(Config|undefined)} defaultConfig - A Config object to use as default instead of `DefaultConfig`
  * @returns {Config} A populated {@link Config} object or DefaultConfig if `path` is `undefined`
  */
-export function load(path: string | undefined): Config {
+export function load(path: string | undefined, defaultConfig?: Config): Config {
   const config: Config = path ?
-    <Config> JSON.parse(
+    <Config>JSON.parse(
       readFileSync(resolve(cwd(), path))
         .toString()
-    ) :
-    DefaultConfig
+    ) : defaultConfig || DefaultConfig
 
   // Override the config object with env variables
   Object.entries(env)

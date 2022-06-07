@@ -16,10 +16,10 @@
     "node": ">= 18 <19"
   },
   "scripts": {
-    "start": "node build/app.js bakeka.config.json",
+    "start": "ts-node src/app.ts bakeka.config.json",
     "build": "tsoa spec-and-routes && tsc -p tsconfig.json",
     "dev": "concurrently 'nodemon' 'nodemon -x tsoa spec-and-routes'",
-    "dev:stack": "cross-env BKK_DB_DB=test BKK_DB_PORT=27017 concurrently 'nodemon' 'nodemon -x tsoa spec-and-routes' 'docker run --name mongodb --rm -d -p 27017:27017 -v \"$PWD\"/tools/fake-data.js:/docker-entrypoint-initdb.d/fake-data.js:ro mongo:4.4' && docker stop mongodb",
+    "dev:stack": "cross-env BKK_DB_DB=test BKK_DB_PORT=27017 concurrently 'nodemon' 'nodemon -x tsoa spec-and-routes' 'docker run --name mongodb --rm -d -p 27017:27017 -v \"$(pwd)\"/tools/fake-data.js:/docker-entrypoint-initdb.d/fake-data.js:ro mongo:4.4' && docker stop mongodb",
     "stack": "docker-compose up --build"
   },
   "nodemonConfig": {
@@ -35,7 +35,9 @@
   "dependencies": {
     "@abraham/reflection": "^0.10.0",
     "@typegoose/typegoose": "^9.8.1",
+    "@types/cors": "^2.8.12",
     "@types/multer": "^1.4.7",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "mongodb": "^4.6.0",
     "mongoose": "^6.3.4",

@@ -11,34 +11,41 @@ import { FieldErrors, ValidateError } from "tsoa"
  * @param objectPrefix A prefix for the value paths returned in the error
  * @returns A `ValidateError` with the relevant information or `undefined` if all is well
  */
-export const validatePoint = (point: Point, objectPrefix: string): ValidateError | undefined => {
+export const validatePoint = (point: Point, objectPrefix: string) => {
   const errs: FieldErrors = {}
-  if (point.type !== "Point")
+  let hasErr = false
+
+  if (point.type !== "Point") {
     errs[`${objectPrefix}.type`] = {
       message: "type should be 'Point'",
       value: point.type
     }
+    hasErr = true
+  }
 
-  if (point.coordinates[0] <= -180.0 || 180.0 <= point.coordinates[0])
+  if (point.coordinates[0] <= -180.0 || 180.0 <= point.coordinates[0]) {
     errs[`${objectPrefix}.coordinates[0]`] = {
       message: "longitude should be between -180.0 and 180.0 inclusive",
       value: point.coordinates[0]
     }
+    hasErr = true
+  }
 
-  if (point.coordinates[1] <= -90.0 || 90.0 <= point.coordinates[1])
+  if (point.coordinates[1] <= -90.0 || 90.0 <= point.coordinates[1]) {
     errs[`${objectPrefix}.coordinates[1]`] = {
       message: "latitude should be between -90.0 and 90.0 inclusive",
       value: point.coordinates[1]
     }
+    hasErr = true
+  }
 
-  if (errs == {}) return undefined
-  return new ValidateError(errs, "invalid coordinates")
+  if (hasErr) throw new ValidateError(errs, "invalid coordinates")
 }
 
 /**
  * Type Point represents a [GeoJSON point](https://www.mongodb.com/docs/manual/reference/geojson/#point).
  */
- export class Point {
+export class Point {
   /**
    * GeoJSON type. Is always "Point".
    */

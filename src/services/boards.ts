@@ -80,8 +80,7 @@ export class BoardsService {
 
     // If updating location data and the data is valid,
     if (board.location) {
-      const validateResult = validatePoint(board.location, "board.location")
-      if (validateResult) throw validateResult
+      validatePoint(board.location, "board.location")
 
       query.location = {
         $near: {
