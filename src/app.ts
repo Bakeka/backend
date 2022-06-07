@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response } from "express"
 import cors from "cors"
 import process from "process"
-import "@abraham/reflection"
+import "reflect-metadata"
 import { container } from "tsyringe"
 
 import * as routes from "./api/routes"

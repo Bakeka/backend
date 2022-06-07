@@ -33,7 +33,7 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true,
     "types": [
-      "@abraham/reflection"
+      "reflect-metadata"
     ]
   }
 }
